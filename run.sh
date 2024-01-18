@@ -22,7 +22,10 @@
 #python3 subtaskB/baseline/transformer_baseline.py --train_file_path ./data/SubtaskB/subtaskB_train.jsonl --test_file_path ./data/SubtaskB/subtaskB_dev.jsonl --prediction_file_path ./predictions/subtaskB_mistral.jsonl --subtask B --model mistralai/Mistral-7B-v0.1
 
 
-# python llama_seq_clf.py subtaskA_mono 7b 
-python llama_seq_clf.py subtaskA_mul 7b 
-python llama_seq_clf.py subtaskB 7b 
+python llama_seq_clf.py subtaskA_mono 7b 
+# python llama_seq_clf.py subtaskA_mul 7b 
+# python llama_seq_clf.py subtaskB 7b 
 
+# python llama_seq_clf.py subtaskA_mono 13b 
+# python llama_seq_clf.py subtaskA_mul 13b 
+# python llama_seq_clf.py subtaskB 13b 
