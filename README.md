@@ -34,14 +34,57 @@ pip install gdown
 ```
 gdown --folder https://drive.google.com/drive/folders/<file_id>
 ```
-Make sure to replace `<file_id>` with the respective file IDs provided above when running the `gdown` command for the desired dataset.
 
+Make sure to replace `<file_id>` with the respective file IDs provided above when running the `gdown` command for the desired dataset.
 
 ## Models
 
 ![](./images/model.png)
 
-(updating scripts to run later)
+### 1. Metric-based methods
+
+Follow the instruction in [MGTBench](https://github.com/xinleihe/MGTBench).
+
+### 2. LM-based methods
+
+Follow the instruction of the baseline models in [subtaskA/baseline](./subtaskA/baseline) and [subtaskB/baseline](./subtaskB/baseline).
+
+Run the following script to train the model:
+
+- Subtask A:
+
+```
+python3 subtaskA/baseline/transformer_baseline.py --train_file_path <path_to_train_file> --test_file_path <path_to_test_file> --prediction_file_path <path_to_save_predictions> --subtask A --model <path_to_model>
+```
+
+- Subtask B:
+
+```
+python3 subtaskB/baseline/transformer_baseline.py --train_file_path <path_to_train_file> --test_file_path <path_to_test_file> --prediction_file_path <path_to_save_predictions> --subtask B --model <path_to_model>
+```
+
+### 3. LLM-based methods
+
+Run the following script to train the model:
+
+```
+chmod +x run.sh
+./run.sh
+```
+
+## Results
+
+### 1. The development set
+
+![](./images/result.png)
+
+### 2. The test set
+
+| Model | Subtask A - mono | Subtask A - mul | Subtask B |
+|-------|-------------------|-----------------|-----------|
+|Baseline| 0.88466 | 0.80887 | 0.74605 |
+|LS_LLaMA| 0.85840 | 0.92867 | 0.83117 |
+|Rankings| 29/139  | 6/69    | 6/77    |
 
 ## Contributors
 
